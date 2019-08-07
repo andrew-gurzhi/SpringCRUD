@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="js/hello.js">
+</script>
+<nav class="navbar navbar-inverse" role="navigation">
+    <a class="navbar-brand text-secondary" href="#">My Project</a>
+    <
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+<div class="conteiner-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 ">
+            <ul class="nav nav-stacked flex-column bg-light">
+                <li class="nav-item">
+                    <a class="nav-link bg-primary text-white" href="/admin/films">Admin</a>
+                </li>
+
+                <li class="nav-item">
+                    <a  class="nav-link" href="/user/menu">User</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="col-sm-9  offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <ul class="nav nav-tabs">
+                <h2 >Admin Panel</h2>
+                <li class="active"><a data-toggle="tab" href="#panel1">Users Table</a></li>
+                <li><a data-toggle="tab" href="#panel2">New User</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="panel1" class="tab-pane fade in active">
+                    <h3>All Users</h3>
+                    <table id="filmstable" class="table table-striped">
+                        <th>Name of user:</th>
+                        <th>Pass of user:</th>
+                        <th>Operation Delete</th>
+                        <th>Operation Edit</th>
+                    </table>
+                </div>
+                <div id="panel2" class="tab-pane fade">
+                    <nav class="navbar navbar-default">
+                        <a class="navbar-brand"  >Add new User</a>
+                    </nav>
+
+                    <div class="container">
+                        <div id="login-row" class="row justify-content-center align-items-center">
+                            <div id="login-column" class="col-md-6 col-md-offset-3">
+                                <div id="login-box" class="col-md-6">
+
+                                    <div class="form-group">
+                                        <p align="center"><b>Name</b></p><input  type="text" class="form-control" id="uname" />
+                                        <br><br>
+                                        <p align="center"><b>Login</b></p> <input  type="text" class="form-control" id="ulogin"/>
+                                        <br><br>
+                                        <p align="center"><b>Password</b></p> <input id="upass" name="text"
+                                                                                     class="form-control"/>
+                                        <br>
+                                        <table id = "roletable">
+
+                                        <th>Name of Role </th>
+                                        <th>Checked</th>
+                                        </table>
+                                        <P><input type="button" onclick="prepareadduser()" class=" btn btn-success center-block btn-lg"
+                                                  value="Registration"/></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+
+    <div class="modal modal-warning fade in" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h3 class="modal-title">Edit user </h3>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div id="login-row1" class="row justify-content-center align-items-center">
+                            <div id="login-column1" class="col-md-4 col-md-offset-2">
+                                <div id="login-box1" class="col-md-6">
+
+                                        <p align="center"><b>Name</b></p><input id ="updname" name="name"  class="form-control"/>
+
+                                        <br>
+                                        <p align="center"><b>Login</b></p><input id ="updlogin" name="login" value="dsf" class="form-control"
+                                                                                 />
+                                        <br><br>
+                                        <p align="center"><b>Password</b></p><input id ="updpass" name="pass" value="dfads" class="form-control"
+                                                                                    />
+
+                                        <br>
+                                        Check Roles
+                                        <br>
+                                        <table id="roleupdtable"></table>
+                                        <br>
+                                        <input type="submit" onclick="prepareupdateuser(upid)" class="btn btn-success"  value="Update"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</tr>
+<script type="text/javascript" src="/static/js/hello.js"></script>
+
+</body>
+
+</html>

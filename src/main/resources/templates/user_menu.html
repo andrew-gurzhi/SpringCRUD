@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>User</title>
+
+</head>
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <a class="navbar-brand text-secondary" href="#">My Project</a>
+    <<ul class="nav navbar-nav navbar-right">
+    <li><a href="/logout">Logout</a></li>
+</ul>
+</nav>
+<div class="conteiner-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-light sidebar">
+            <ul class="nav nav-stacked flex-column bg-light">
+                <li class = "nav-item">
+                    <a class="nav-link  text-white" href="/admin/films">Admin</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class="nav-link bg-primary text-white" href="/user/menu">User</a>
+                </li>
+            </ul>
+        </nav>
+        <main class = "col-sm-9  offset-sm-3 col-md-10 offset-md-2 pt-3 bg-light" >
+            <h1>User Page</h1>
+           Hello  <span th:utext="${user.name}"/>
+        </main>
+    </div>
+</div>
+</body>
+</html>

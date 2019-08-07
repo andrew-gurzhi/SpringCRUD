@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <a class="navbar-brand text-secondary" href="#">My Project</a>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+<div class="conteiner-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 ">
+            <ul class="nav nav-pills flex-column bg-light">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/menu">User</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="col-sm-9  offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <h1> Admin Panel</h1>
+            <ul class="nav nav-tabs" role="tablist">
+                <li><a href="/admin/films" >Home </a>
+                </li>
+                <li class="active"><a href="/admin/add" data-toggle="tab" btn> Registration</a></li>
+            </ul>
+            <ul>
+                <nav class="navbar navbar-default" >
+                <a class="navbar-brand" >Add new User</a>
+                </nav>
+                <div class="container">
+                    <div id="login-row" class="row justify-content-center align-items-center">
+                        <div id="login-column" class="col-md-6 col-md-offset-3">
+                            <div id="login-box" class="col-md-6">
+                                <form method="post" th:object="${user}" action="/admin/add" class="center-block">
+                                <div class="form-group">
+                                    <p align="center"><b>Name</b></p><input type="text" class="form-control" th:field="*{name}"/>
+                                    <br><br>
+                                    <p align="center"><b>Login</b></p> <input type="text" class="form-control" th:field="*{login}"/>
+                                    <br><br>
+                                   <p align="center"><b>Password</b></p> <input name="text" class="form-control" th:field="*{pass}"/>
+                                    <br>
+                                    Check Roles
+                                    <tr th:each="role:${rolelist}">
+                                        <br>
+                                        <td th:utext="${role.type}"/>
+                                        </td>
+                                        <input type="checkbox" th:value="${role.type}" name="role.type"/></p>
+
+                                    </tr>
+                                    <P><input type="submit" class=" btn btn-success center-block btn-lg" value="Registration"/></p>
+                                </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ul>
+
+        </main>
+    </div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
+
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
